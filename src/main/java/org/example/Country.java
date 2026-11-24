@@ -9,23 +9,10 @@ public class Country {
     private Long capitalPopulation;
 
     public Country(String name, double area, long population, String capitalName, Long capitalPopulation) {
-        if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("Название страны не может быть пустым");
-        }
-        if (area <= 0) {
-            throw new IllegalArgumentException("Площадь страны должна быть больше 0");
-        }
-        if (population < 0) {
-            throw new IllegalArgumentException("Население страны не может быть отрицательным");
-        }
-
-        this.name = name;
-        this.area = area;
-        this.population = population;
-
+        setName(name);
+        setArea(area);
+        setPopulation(population);
         setCapital(capitalName, capitalPopulation);
-
-
     }
 
     public Country(String name, double area, long population) {
@@ -37,7 +24,7 @@ public class Country {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty())
+        if (name == null || name.isBlank())
             throw new IllegalArgumentException("Название страны не может быть пустым");
 
         this.name = name;

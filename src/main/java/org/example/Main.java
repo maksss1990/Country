@@ -100,7 +100,7 @@ public class Main {
                 scanner.nextLine();
                 return value;
             } catch (InputMismatchException e) {
-                System.out.println("Ошибка ввода. Введите корректное цнлое числовое значение.");
+                System.out.println("Ошибка ввода. Введите корректное целое числовое значение.");
                 scanner.nextLine();
             }
         }
@@ -119,7 +119,7 @@ public class Main {
                 continue;
             }
 
-            return value;
+            return value.substring(0, 1).toUpperCase().concat(value.substring(1));
         }
     }
 }
